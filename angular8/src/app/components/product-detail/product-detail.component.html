@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 *ngIf="!productLoaded && !producErrored">Loading</h1>
+  <h1 *ngIf="producErrored">Error Loading Product</h1>
+
+  <div *ngIf="productLoaded">
+    <h1 class="mt-4 mb-5"><i class="fa fa-info-circle mr-2"></i> Displaying Product Details</h1>
+
+    <h3>Product ID:</h3>
+    <p>{{ product.id }}</p>
+    <h3>Product Name:</h3>
+    <p>{{ product.name }}</p>
+    <h3>Product Description:</h3>
+    <p>{{ product.description }}</p>
+    <h3>Available Quantity:</h3>
+    <p>{{ product.quantity }}</p>
+
+    <button class="btn btn-warning btn-block" (click)="navigateToList()">
+      <i class="fa fa-arrow-left mr-2"></i> Return to list
+    </button>
+  </div>
+</div>
